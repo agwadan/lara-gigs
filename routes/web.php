@@ -45,8 +45,8 @@ Route::get('/', function () {
 });
 
 //Single Listing
-Route::get('/listings/{id}', function ($id) {
+Route::get('/listings/{listing}', function (Listing $listing) { //----- Using Route Model Binding : the function takes in the Listing model and the listing variable
     return view('listing', [
-        'listing' => Listing::find($id) //--------------- Find is the name of the static function in the Listing class
+        'listing' => $listing //--------------- Find is the name of the static function in the Listing class
     ]);
 });
