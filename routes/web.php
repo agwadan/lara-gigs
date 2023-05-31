@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ListingController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Listing;
@@ -37,16 +38,7 @@ Route::get('/search', function (Request $request) {
 
 /* All Listings */
 
-Route::get('/', function () {
-    return view('listings', [
-        'heading' => 'Latest Listing',
-        'listings' => Listing::all()
-    ]);
-});
+Route::get('/', [ListingController::class, 'index']);
 
 //Single Listing
-Route::get('/listings/{listing}', function (Listing $listing) { //----- Using Route Model Binding : the function takes in the Listing model and the listing variable
-    return view('listing', [
-        'listing' => $listing //--------------- Find is the name of the static function in the Listing class
-    ]);
-});
+Route::get('/listings/{listing}', [ListingController::class, 'show']);
