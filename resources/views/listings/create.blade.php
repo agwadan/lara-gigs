@@ -22,6 +22,12 @@
         />
     </div>
 
+    @error('company')
+      <p class="text-red-500 text-xs mt-1">
+        {{$message}}
+      </p>
+    @enderror
+
     <div class="mb-6">
         <label for="title" class="inline-block text-lg mb-2"
             >Job Title</label
@@ -33,6 +39,12 @@
             placeholder="Example: Senior Laravel Developer"
         />
     </div>
+
+    @error('title')
+      <p class="text-red-500 text-xs mt-1">
+        {{$message}}
+      </p>
+    @enderror
 
     <div class="mb-6">
         <label
@@ -48,6 +60,12 @@
         />
     </div>
 
+    @error('location')
+      <p class="text-red-500 text-xs mt-1">
+        {{$message}}
+      </p>
+    @enderror
+
     <div class="mb-6">
         <label for="email" class="inline-block text-lg mb-2"
             >Contact Email</label
@@ -58,6 +76,12 @@
             name="email"
         />
     </div>
+
+    @error('email')
+      <p class="text-red-500 text-xs mt-1">
+        {{$message}}
+      </p>
+    @enderror
 
     <div class="mb-6">
         <label
@@ -73,6 +97,12 @@
         />
     </div>
 
+    @error('website')
+      <p class="text-red-500 text-xs mt-1">
+        {{$message}}
+      </p>
+    @enderror
+
     <div class="mb-6">
         <label for="tags" class="inline-block text-lg mb-2">
             Tags (Comma Separated)
@@ -84,6 +114,12 @@
             placeholder="Example: Laravel, Backend, Postgres, etc"
         />
     </div>
+
+    @error('tags')
+      <p class="text-red-500 text-xs mt-1">
+        {{$message}}
+      </p>
+    @enderror
 
     {{-- <div class="mb-6">
         <label for="logo" class="inline-block text-lg mb-2">
