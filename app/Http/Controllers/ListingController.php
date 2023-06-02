@@ -12,7 +12,7 @@ class ListingController extends Controller
     {
         //dd(request()->tag);
         return view('listings.index', [
-            'listings' => Listing::latest()->filter(request(['tag']))->get() //---- Sorted by the latest coming first
+            'listings' => Listing::latest()->filter(request(['tag', 'search']))->get() //---- Sorted by the latest coming first
         ]);
     }
 
