@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Listing;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class ListingController extends Controller
 {
@@ -22,5 +23,29 @@ class ListingController extends Controller
         return view('listings.show', [
             'listing' => $listing //--------------- Find is the name of the static function in the Listing class
         ]);
+    }
+
+    //Function to add Listing
+    public function create()
+    {
+        return view('listings.create');
+    }
+
+    //Function to store listing data to DB
+    public function store(Request $request)
+    {
+
+        //Validation of the data
+        $formFields = $request->validate([
+            'title' => 'required',
+            'company' => ['required', Rule::unique('listings', 'company')], /* Rule::(unique('tableName in the DB', 'THe field to check and keep unique')) */
+            'location' => 'required',
+            'website' => 'required',
+            'email' => ['required', 'email'],
+            'tags' => 'required',
+            'description' => 'required'
+        ]);
+
+        return redirect('/');
     }
 }

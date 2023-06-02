@@ -40,5 +40,13 @@ Route::get('/search', function (Request $request) {
 
 Route::get('/', [ListingController::class, 'index']);
 
+
+//Show Create Form
+Route::get('/listings/create', [ListingController::class, 'create']);
+
+//Store listing data
+Route::post('/listings', [ListingController::class, 'store']);
+
+
 //Single Listing
-Route::get('/listings/{listing}', [ListingController::class, 'show']);
+Route::get('/listings/{listing}', [ListingController::class, 'show']); //----- should be below all routes that are in begin with "listings". . . to prevent them from being read as dynamic routes
