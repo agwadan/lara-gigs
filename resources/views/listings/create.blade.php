@@ -87,8 +87,6 @@
     @enderror
     </div>
 
-    
-
     <div class="mb-6">
         <label
             for="website"
@@ -103,9 +101,9 @@
             value="{{old('website')}}"
         />
         @error('website')
-      <p class="text-red-500 text-xs mt-1">
-        {{$message}}
-      </p>
+        <p class="text-red-500 text-xs mt-1">
+            {{$message}}
+        </p>
     @enderror
     </div>
 
