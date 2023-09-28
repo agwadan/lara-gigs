@@ -47,6 +47,8 @@ Route::get('/listings/create', [ListingController::class, 'create']);
 //Store listing data
 Route::post('/listings', [ListingController::class, 'store']);
 
+//Show Edit form
+Route::get('/listings/{listing}/edit', [ListingController::class, 'edit']);
 
 //Single Listing
 Route::get('/listings/{listing}', [ListingController::class, 'show']); //----- should be below all routes that are in begin with "listings". . . to prevent them from being read as dynamic routes

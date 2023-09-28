@@ -44,11 +44,14 @@
                         href="https://test.com"
                         target="_blank"
                         class="block bg-black text-white py-2 rounded-xl hover:opacity-80"
-                        ><i class="fa-solid fa-globe"></i> {{$listing->website}}</a
-                        >
+                        ><i class="fa-solid fa-globe"></i> {{$listing->website}}</a>
                     </div>
                 </div>
             </div>
+        </x-card>
+
+        <x-card class="mt-4 p-2 flex space-x-6">
+            <a href="/listings/{{$listing->id}}/edit"> <i class="fa-solid fa-pencil"></i> Edit</a>
         </x-card>
     </div>
 </x-layout>
