@@ -53,5 +53,8 @@ Route::get('/listings/{listing}/edit', [ListingController::class, 'edit']);
 //Update Listing
 Route::put('/listings/{listing}', [ListingController::class, 'update']);
 
+//Delete Listing
+Route::delete('/listings/{listing}', [ListingController::class, 'destroy']);
+
 //Single Listing
 Route::get('/listings/{listing}', [ListingController::class, 'show']); //----- should be below all routes that are in begin with "listings". . . to prevent them from being read as dynamic routes
