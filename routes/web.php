@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ListingController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Listing;
@@ -58,3 +59,6 @@ Route::delete('/listings/{listing}', [ListingController::class, 'destroy']);
 
 //Single Listing
 Route::get('/listings/{listing}', [ListingController::class, 'show']); //----- should be below all routes that are in begin with "listings". . . to prevent them from being read as dynamic routes
+
+//Show Register/Create user form
+Route::get('/register', [Usercontroller::class, 'register']);
