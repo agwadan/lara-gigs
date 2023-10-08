@@ -20,7 +20,7 @@
                                   type="text"
                                   class="border border-gray-200 rounded p-2 w-full"
                                   name="name"
-                                  value={{old('name')}}
+                                  value="{{old('name')}}"
                               />
                           </div>
 
@@ -38,7 +38,7 @@
                                   type="email"
                                   class="border border-gray-200 rounded p-2 w-full"
                                   name="email"
-                                  value={{old('email')}}
+                                  value="{{old('email')}}"
                               />
                               @error('email') {{-- pass in the name of the field being handled "email in this case" --}}
                               <p class="text-red-500 text-xs mt-1">
@@ -58,7 +58,7 @@
                                   type="password"
                                   class="border border-gray-200 rounded p-2 w-full"
                                   name="password"
-                                  value={{old('password')}}
+                                  value="{{old('password')}}"
                               />
                           </div>
 
@@ -79,7 +79,7 @@
                                   type="password"
                                   class="border border-gray-200 rounded p-2 w-full"
                                   name="password_confirmation"
-                                  value={{old('password_confirmation')}}
+                                  value="{{old('password_confirmation')}}"
                               />
                           </div>
 
