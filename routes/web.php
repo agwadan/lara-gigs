@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Listing;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,3 +66,6 @@ Route::get('/register', [Usercontroller::class, 'register']);
 
 //Create New User
 Route::post('/users', [UserController::class, 'store']);
+
+//LogUser out
+Route::post('/logout', [UserController::class, 'logout']);
