@@ -62,3 +62,6 @@ Route::get('/listings/{listing}', [ListingController::class, 'show']); //----- s
 
 //Show Register/Create user form
 Route::get('/register', [Usercontroller::class, 'register']);
+
+//Create New User
+Route::post('/users', [UserController::class, 'store']);
