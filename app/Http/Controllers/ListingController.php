@@ -64,9 +64,19 @@ class ListingController extends Controller
         return view('listings.edit', ['listing' => $listing]);
     }
 
+    public function manage()
+    {
+        return view('listings.manage', ['listings' => auth()->user()->listings()->get()]);
+    }
+
     //Update Listing Data
     public function update(Request $request, Listing $listing)
     {
+
+        //Make sure loggedin user is the owner
+        if ($listing->user_id != auth()->id()) {
+            abort(403, 'Unauthorized Action');
+        }
 
         //Validation of the data
         $formFields = $request->validate([
@@ -87,9 +97,15 @@ class ListingController extends Controller
         return back()->with('message', 'Listing Created successfully');
     }
 
-    /* Delete Listing */
+    // Delete Listing 
     public function destroy(Listing $listing)
     {
+
+        //Making sure the user deleting has the right
+        if ($listing->user_id != auth()->id()) {
+            abort(403, "Unauthorized Action");
+        }
+
         $listing->delete();
         return redirect('/')->with('message', 'Listing Deleted Successfully');
     }
