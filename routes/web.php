@@ -44,34 +44,36 @@ Route::get('/', [ListingController::class, 'index']);
 
 
 //Show Create Form
-Route::get('/listings/create', [ListingController::class, 'create']);
+Route::get('/listings/create', [ListingController::class, 'create'])->middleware('auth');
 
 //Store listing data
-Route::post('/listings', [ListingController::class, 'store']);
+Route::post('/listings', [ListingController::class, 'store'])->middleware('auth'); //the auth middleware prevents users who have not logged in from accessing some routes
 
 //Show Edit form
-Route::get('/listings/{listing}/edit', [ListingController::class, 'edit']);
+Route::get('/listings/{listing}/edit', [ListingController::class, 'edit'])->middleware('auth');
 
 //Update Listing
-Route::put('/listings/{listing}', [ListingController::class, 'update']);
+Route::put('/listings/{listing}', [ListingController::class, 'update'])->middleware('auth');
 
 //Delete Listing
-Route::delete('/listings/{listing}', [ListingController::class, 'destroy']);
+Route::delete('/listings/{listing}', [ListingController::class, 'destroy'])->middleware('auth');
 
 //Single Listing
 Route::get('/listings/{listing}', [ListingController::class, 'show']); //----- should be below all routes that are in begin with "listings". . . to prevent them from being read as dynamic routes
 
 //Show Register/Create user form
-Route::get('/register', [Usercontroller::class, 'register']);
+Route::get('/register', [Usercontroller::class, 'register'])->middleware('guest');
 
 //Create New User
 Route::post('/users', [UserController::class, 'store']);
 
 //LogUser out
-Route::post('/logout', [UserController::class, 'logout']);
+Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
 
 //Show Login form
-Route::get('/login', [UserController::class, 'login']);
+Route::get('/login', [UserController::class, 'login'])
+    ->name('login')
+    ->middleware('guest');
 
 //User/Login
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
