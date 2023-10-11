@@ -1,0 +1,16 @@
+<svg width="300" height="80" xmlns="http://www.w3.org/2000/svg">
+    
+    <!-- Magnifying glass handle representing 'search' -->
+    <line x1="30" y1="40" x2="15" y2="55" stroke="black" stroke-width="2.5"/>
+    
+    <!-- Magnifying glass lens with a nest pattern -->
+    <circle cx="30" cy="30" r="15" fill="none" stroke="limegreen" stroke-width="2.5"/>
+    
+    <!-- Nest pattern inside the lens -->
+    <path d="M 15 30 Q 25 50 45 30 T 75 30" stroke="black" fill="none"/>
+    <path d="M 20 35 Q 30 50 50 35 T 80 35" stroke="black" fill="none"/>
+    
+    <!-- JobNest Text next to the symbol -->
+    <text x="90" y="50" font-family="Arial" font-weight="bold" font-size="28" fill="limegreen">JobNest</text>
+
+</svg>
