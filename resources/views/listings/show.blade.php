@@ -29,7 +29,7 @@
             {{ $listing->description }}
 
             <a href="mailto:{{ $listing->email }}"
-              class="block bg-laravel text-white mt-6 py-2 rounded-xl hover:opacity-80"><i
+              class="block bg-primary text-white mt-6 py-2 rounded-xl hover:opacity-80"><i
                 class="fa-solid fa-envelope"></i>
               Contact Employer</a>
 
